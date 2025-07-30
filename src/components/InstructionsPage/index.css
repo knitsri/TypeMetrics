@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+.instructions-bg-container {
+  min-height: 100vh;
+  background-image: url('https://i.pinimg.com/736x/a8/82/fd/a882fdcb63dc81c6d89c5ab6aae0e54e.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInBg 1s ease-in-out;
+}
+
+@keyframes fadeInBg {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.instructions-heading {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #222;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+  animation: slideInTop 0.8s ease forwards;
+}
+
+.instructions-subheading {
+  font-size: 18px;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 35px;
+  animation: slideInTop 1s ease forwards;
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 620px;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.instructions-list li {
+  font-size: 17px;
+  margin-bottom: 16px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.instructions-list li:hover {
+  transform: translateX(5px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.start-button {
+  background-color: #76c0a5;
+  color: white;
+  font-size: 16px;
+  min-width: 160px;  /* 👈 ensures good width */
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;  /* 👈 subtle spacing */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.start-button:hover {
+
+  background-color: #5ba890;
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  
+}
+
+@media (max-width: 768px) {
+  .instructions-heading {
+    font-size: 32px;
+  }
+
+  .instructions-subheading {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .instructions-list li {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .start-button {
+    min-width: 140px;
+    padding: 12px 0;
+    font-size: 15px;
+  }
+
+  .instructions-bg-container {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions-heading {
+    font-size: 26px;
+  }
+
+  .instructions-subheading {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .instructions-list li {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .start-button {
+    min-width: 120px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+}
+
+
+
+
+
+
+

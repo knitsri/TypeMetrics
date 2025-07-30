@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+.challenge-bg-container{
+  min-height: 100vh;
+  background-image: url('https://i.pinimg.com/736x/69/1a/f2/691af25b2c8d5ed11bc74ce1212c8f4d.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: flex-start; /* 👈 push it to the left */
+  align-items: center;
+  padding-left: 80px;  /* 👈 give extra space from the left edge */
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.card-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Timer Section */
+.timer-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #134e4a;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.clock-icon {
+  font-size: 20px;
+}
+
+/* Paragraph */
+.challenge-paragraph {
+  font-size: 17px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  color: #1a1a1a;
+}
+
+/* Input */
+/* .typing-input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
+}
+
+.typing-input:focus {
+  border-color: #45b69c;
+} */
+
+/* Submit Button */
+.submit-button {
+  background-color: #45b69c;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #3aa88c;
+  box-shadow: 0 0 12px #3aa88c, 0 0 24px #3aa88c;
+  transform: scale(1.05);
+}
+
+.typing-area {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  resize: none;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.typing-area:focus {
+  border-color: #45b69c;
+}
+
+
+.result-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 50px 40px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #134e4a;
+  margin-bottom: 20px;
+}
+
+.result-line {
+  font-size: 18px;
+  margin: 12px 0;
+  color: #333;
+}
+
+.result-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.retry-button,
+.home-button {
+  background-color: #3aa88c;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover,
+.home-button:hover {
+  background-color: #45b69c;
+  box-shadow: 0 0 12px #45b69c;
+  transform: scale(1.05);
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  border-radius: 2px;
+  opacity: 0.9;
+  animation: confettiFall 3s ease-out forwards;
+  z-index: 5;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* 👈 avoids showing anything before flying */
+  pointer-events: none;
+  overflow: visible;
+}
+
+@media (max-width: 768px) {
+  .challenge-bg-container {
+    justify-content: center; /* center the card horizontally */
+    padding-left: 20px;
+    padding-right: 20px;
+    background-attachment: scroll; /* disables fixed effect on mobile */
+  }
+
+  .card-container,
+  .result-card {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  .result-heading {
+    font-size: 24px;
+  }
+
+  .result-line {
+    font-size: 16px;
+  }
+
+  .retry-button,
+  .home-button,
+  .submit-button {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+
+  .typing-area {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .challenge-bg-container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .result-heading {
+    font-size: 22px;
+  }
+
+  .result-line {
+    font-size: 15px;
+  }
+
+  .retry-button,
+  .home-button,
+  .submit-button {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  .typing-area {
+    font-size: 14px;
+  }
+}
+
+
+

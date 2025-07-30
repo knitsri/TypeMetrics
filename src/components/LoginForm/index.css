@@ -1,0 +1,85 @@
+.form-container {
+    background-image : url('https://i.pinimg.com/736x/ca/58/7a/ca587ae5a4fe01cfbb8004bcf9929aca.jpg');
+    /* backdrop-filter: blur(10px); */
+    height:100vh;
+    background-size : cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center center; /* Add this! */
+    background-repeat: no-repeat;  
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.15); /* Soft white transparent */
+  backdrop-filter: blur(10px);           /* Glass effect */
+  -webkit-backdrop-filter: blur(10px);   /* Safari support */
+  padding: 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  color: #fff;
+  /* width: 300px; */
+  /* padding-left:50px;
+  padding-right:50px; */
+}
+
+.name-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top:20px;
+}
+
+.input-field {
+    margin-top:5px;
+    border-radius:5px;
+    border-width: 0px;
+    height: 25px;
+    padding:10px;
+}
+
+.logIn-button {
+    width: 100%;
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logIn-button:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.03);
+}
+
+.button-container {
+    text-align: center;
+    margin-top :40px;
+}
+
+.input-field:focus {
+  outline: none;
+  border: 2px solid #ffffff88; /* soft white border or any color you want */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* optional glow */
+  background-color: rgba(255, 255, 255, 0.2); /* optional background */
+}
+
+.errMsg {
+    color: #f8ae76; /* warm peach-orange — blends with bg */
+  font-size: 13.5px;
+  font-weight: 500;
+  font-style: italic;
+  margin-top: 5px;
+  padding-left: 4px;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.typemetrics-heading {
+  color : white
+}

@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: black;
+}
+
+/* Navbar */
+.nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 12px 12px;
+} 
+
+/* Logo */
+.logo-container .app-name {
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #ffffff30;
+  padding-bottom: 4px;
+  line-height: 1;      
+  margin: 0; 
+}
+
+/* Nav Items */
+.nav-items-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items-container h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffffd0;
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.nav-items-container h2::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+
+.nav-items-container h2:hover {
+  color: #ffffff;
+}
+
+.nav-items-container h2:hover::after {
+  width: 100%;
+}
+
+.nav-link-item {
+  text-decoration: none;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffffd0;
+  transition: all 0.3s ease;
+}
+
+/* When menu is open, show nav items stacked */
+.nav-items-container.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 24px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  gap: 12px;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .nav-items-container {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
