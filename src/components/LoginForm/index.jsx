@@ -38,7 +38,7 @@ function LoginForm() {
           isValid = false
         }
      }
-     if(pwd != "" && pwd.length<=6){
+     if(pwd != "" && pwd.length<6){
       setPwdLenErr('*Password must be at least 6 characters.')
       isValid = false
      }

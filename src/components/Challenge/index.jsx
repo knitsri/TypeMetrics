@@ -27,6 +27,7 @@ function Challenge() {
   const [userInput, setuserInput] = useState('')
   const userInputRef = useRef(userInput)
   const [accuracy, setAccuracy] = useState(0) 
+  
   const [actualText] = useState(() => {
     const randomIndex = Math.floor(Math.random() * sampleTexts.length)
     return sampleTexts[randomIndex]
