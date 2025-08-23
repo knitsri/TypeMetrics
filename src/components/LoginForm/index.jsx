@@ -66,7 +66,7 @@ function LoginForm() {
             
         </div>
         <div className='button-container'>
-           <button className='logIn-button'>Sign Up</button>
+           <button className='logIn-button'>Login In</button>
         </div>
       </form>
     </div>

@@ -33,7 +33,7 @@ function Navbar() {
             <h2 className='leader-board-name'>My Scores</h2>
         </Link>
         <Link to="/login" className='nav-link-item' onClick={() => { onClickLogoutBtn(); setMenuOpen(false) }}>
-           <h2 className='logout-text'>LogOut</h2>
+           <h2 className='logout-text'>Log out</h2>
         </Link>
       </div>
       <div className="hamburger" onClick={handleToggleMenu}>
