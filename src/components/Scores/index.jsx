@@ -12,7 +12,7 @@ function Scores() {
 
   // const { resultList } = useContext(ScoreBoardContext);
   const currentUser = localStorage.getItem("username")
-  const resultList = JSON.parse(localStorage.getItem(`results_${currentUser}`))
+  const resultList = JSON.parse(localStorage.getItem(`results_${currentUser}`) || [])
  
   if (resultList.length === 0) {
     return (
