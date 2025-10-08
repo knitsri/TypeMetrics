@@ -44,7 +44,7 @@ function LoginForm() {
      }
 
      if(isValid){
-      localStorage.setItem("isLoggedIn", 'true')
+      localStorage.setItem("username",name)
       navigate("/",{replace:true})
      }
   }
@@ -66,7 +66,7 @@ function LoginForm() {
             
         </div>
         <div className='button-container'>
-           <button className='logIn-button'>Login In</button>
+           <button className='logIn-button'>Login</button>
         </div>
       </form>
     </div>

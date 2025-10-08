@@ -1,20 +1,27 @@
+
 import React, { useState, createContext , useEffect} from 'react'
 
+/* eslint-disable react-refresh/only-export-components */
 export const ScoreBoardContext = createContext()
 
 const Context = ({ children }) => {
   const [resultList, setResultList] = useState([])
+
+  const currentUser = localStorage.getItem("username")
+
   
   useEffect(() => {
-  const stored = localStorage.getItem("results");
-  if (stored) {
-    setResultList(JSON.parse(stored));
-  }
-}, []);
+   if(currentUser){
+      const stored = localStorage.getItem(`results_${currentUser}`);
+      if (stored) {
+        setResultList(JSON.parse(stored));
+      }
+   }
+}, [currentUser]);
 
 useEffect(() => {
-  localStorage.setItem("results", JSON.stringify(resultList));
-}, [resultList]);
+  localStorage.setItem(`results_${currentUser}`, JSON.stringify(resultList));
+}, [currentUser,resultList]);
 
 
   return (

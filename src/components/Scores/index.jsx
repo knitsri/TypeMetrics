@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ScoreBoardContext } from "../../Context/Context";
 import './index.css';
 import { useNavigate } from 'react-router-dom';
@@ -10,8 +10,10 @@ function Scores() {
       navigate('/instructions')
   }
 
-  const { resultList } = useContext(ScoreBoardContext);
-
+  // const { resultList } = useContext(ScoreBoardContext);
+  const currentUser = localStorage.getItem("username")
+  const resultList = JSON.parse(localStorage.getItem(`results_${currentUser}`))
+ 
   if (resultList.length === 0) {
     return (
       <div className="no-scores-container">

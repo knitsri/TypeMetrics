@@ -36,6 +36,8 @@ function Challenge() {
   // const [resultList, setResultList] = useState([])
   const { width, height } = useWindowSize()  
 
+  const currentUser = localStorage.getItem("username")
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -53,7 +55,11 @@ function Challenge() {
           setAccuracy(acc)
           setIscompleted(true)
           const now = new Date().toLocaleString();
-          setResultList(prev => [...prev,{k:60,acc,timeStamp:now}])
+          const storedScores = JSON.parse(localStorage.getItem(`results_${currentUser}`)) || []
+          const updatedScores = [...storedScores, { acc, k:60, timeStamp: now }]
+          // setResultList(prev => [...prev,{k:60,acc,timeStamp:now}])
+          localStorage.setItem(`results_${currentUser}`, JSON.stringify(updatedScores));
+          setResultList(updatedScores)
           return 0;
         } else {
           return prev - 1;
@@ -83,7 +89,11 @@ function Challenge() {
     setAccuracy(acc)
     setIscompleted(true)
     const now = new Date().toLocaleString();
-    setResultList(prev => [...prev,{acc,k,timeStamp:now}])
+    const storedScores = JSON.parse(localStorage.getItem(`results_${currentUser}`)) || []
+    const updatedScores = [...storedScores, { acc, k, timeStamp: now }]
+    // setResultList(prev => [...prev,{acc,k,timeStamp:now}])
+    setResultList(updatedScores)
+
   }
 
   const onChangeInputArea = event => {

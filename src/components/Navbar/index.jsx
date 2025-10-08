@@ -3,7 +3,7 @@ import './index.css'
 import { Link, useNavigate } from 'react-router-dom'
 
 const onClickLogoutBtn = () => {
-  localStorage.removeItem("isLoggedIn")
+  localStorage.removeItem("username")
 }
 
 function Navbar() {
